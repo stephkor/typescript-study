@@ -113,3 +113,5 @@ const shapes: Shape[] = [ new Circle(5), new Rectangle(10, 5)]
 shapes.forEach(shape => {
     console.log(shape.getArea())
 })
+
+// 2021. 02. 14. 일요일. velopert typescript-basics 따라하기 

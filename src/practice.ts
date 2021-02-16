@@ -114,4 +114,45 @@ shapes.forEach(shape => {
     console.log(shape.getArea())
 })
 
-// 2021. 02. 14. 일요일. velopert typescript-basics 따라하기 
+// 2021. 02. 14. 일요일. velopert typescript-basics 
+
+
+// 일반객체를 inferface 로 타입 설정하기 . type setting object w/ interface
+
+interface Person {
+    name: string;
+    age?: number;
+}
+// age?:number; the question mark after age means that it is a value that might or might not be set. 
+
+// interface Developer {
+//     name: string;
+//     age?: number;
+//     skills: string[];
+// }
+
+const person: Person = {
+    name: 'steph',
+    age: 12
+};
+
+// const dev: Developer = {
+//     name: 'steph dev',
+//     skills : ['javascript', 'react']
+// }
+
+// the Developer interface is similar with the Person interface. In this case,  you can inherit another interface by using extends when declaring an interface. 
+
+interface Developer extends Person {
+    skills: string[];
+}
+
+const dev: Developer = {
+    name: 'steph dev',
+    skills: ['js', 'react']
+}
+
+const people : Person[] = [person, dev]
+
+
+// 2021. 02. 16 

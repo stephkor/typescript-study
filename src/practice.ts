@@ -199,5 +199,5 @@ Typescript earlier had big difference between type and interface, but now there'
 However, when you are writing a library or type support for another library, it is suggested to use interface. */
 
 
-// 2020.02.17 type alias 
+// 2021.02.17 type alias 
 

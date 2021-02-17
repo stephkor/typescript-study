@@ -119,10 +119,12 @@ shapes.forEach(shape => {
 
 // 일반객체를 inferface 로 타입 설정하기 . type setting object w/ interface
 
-interface Person {
-    name: string;
-    age?: number;
-}
+// interface Person {
+//     name: string;
+//     age?: number;
+// }
+
+
 // age?:number; the question mark after age means that it is a value that might or might not be set. 
 
 // interface Developer {
@@ -131,10 +133,10 @@ interface Person {
 //     skills: string[];
 // }
 
-const person: Person = {
-    name: 'steph',
-    age: 12
-};
+// const person: Person = {
+//     name: 'steph',
+//     age: 12
+// };
 
 // const dev: Developer = {
 //     name: 'steph dev',
@@ -143,16 +145,59 @@ const person: Person = {
 
 // the Developer interface is similar with the Person interface. In this case,  you can inherit another interface by using extends when declaring an interface. 
 
-interface Developer extends Person {
-    skills: string[];
-}
+// interface Developer extends Person {
+//     skills: string[];
+// }
 
-const dev: Developer = {
-    name: 'steph dev',
-    skills: ['js', 'react']
-}
+// const dev: Developer = {
+//     name: 'steph dev',
+//     skills: ['js', 'react']
+// }
 
-const people : Person[] = [person, dev]
+// const people : Person[] = [person, dev]
 
 
 // 2021. 02. 16 
+
+
+
+//Type Alias 
+
+/* type can be used for setting an alias or a nickname for a specific type. 
+You can use it to set type for the object, arrays or any types. */
+
+type Person = {
+    name: string;
+    age? :number;
+};
+
+// & is an Intersection, intergrating more than 2 types. 
+type Developer = Person & {
+    skills: string []
+};
+
+const person : Person = {
+    name : 'steph'
+};
+
+const steph: Developer = {
+    name: 'stephDev',
+    skills: ['javascript', 'react']
+};
+
+
+type People = Person[]; // can now use Person[] as type People.
+const people: People = [person, steph]; 
+
+type Color = 'red' | 'orange' | 'yellow';
+const color: Color = 'red';
+const colors: Color[] = ['red', 'orange'];
+
+
+/* 
+Typescript earlier had big difference between type and interface, but now there's not so much. You can use either one if you use it with consistency. 
+However, when you are writing a library or type support for another library, it is suggested to use interface. */
+
+
+// 2020.02.17 type alias 
+
